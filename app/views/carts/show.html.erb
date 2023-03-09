@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.any? %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -25,7 +26,7 @@
             TOTAL:
           </th>
           <th>
-            <%=  humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
@@ -48,5 +49,10 @@
       <% end %>
     </div>
   </div>
+  <%else%>
+  <div class="alert alert-warning" role="alert">
+    Your cart is empty. Please visit our <%= link_to 'home page', root_path %> to browse our products.
+  </div>
+  <%end%>
 
 </section>
