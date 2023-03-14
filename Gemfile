@@ -37,6 +37,7 @@ gem 'money-rails'
 group :development, :test do
   gem 'rspec-rails', '~> 5.1'
   gem 'net-smtp', require: false
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # ...
 end
 
@@ -46,6 +47,7 @@ end
 #   gem 'dotenv-rails'
 # gem 'rspec-rails'
 # end
+
 # Stripe
 gem 'stripe'
 
